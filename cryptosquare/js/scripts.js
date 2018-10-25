@@ -4,7 +4,7 @@ $(document).ready(function() {
     var sentence = $("#sentence").val();
     sentence=sentence.replace(/[^a-zA-Z1-9]/g,"").toLowerCase();
     var row = Math.ceil(Math.sqrt(sentence.length));
-    var column = (sentence.length%row==0)? row:row-1;
+    var column = (sentence.length%row==0 || (row*(row-1)<sentence.length))? row:row-1;
     var codes = new Array(column)
     secretCode =""
     for (var i=0; i <row; i++) {
